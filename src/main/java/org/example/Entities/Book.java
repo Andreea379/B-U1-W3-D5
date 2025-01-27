@@ -5,38 +5,38 @@ import javax.persistence.*;
 @Table(name="books")
 public class Book extends Catalog {
     @Column(nullable = false)
-    private String autore;
-    private String genere;
+    private String author;
+    private String gener;
     public Book() {
     }
 
-    public Book(String isbn, String titolo, int annoPubblicazione, int numeroPagine, String autore, String genere) {
+    public Book(String isbn, String titolo, int annoPubblicazione, int numeroPagine, String author, String gener) {
         super(isbn, titolo, annoPubblicazione, numeroPagine);
-        this.autore = autore;
-        this.genere = genere;
+        this.author = author;
+        this.gener = gener;
     }
 
     public String getAutore() {
-        return autore;
+        return author;
     }
 
-    public void setAutore(String autore) {
-        this.autore = autore;
+    public void setAutore(String author) {
+        this.author = author;
     }
 
     public String getGenere() {
-        return genere;
+        return gener;
     }
 
-    public void setGenere(String genere) {
-        this.genere = genere;
+    public void setGenere(String gener) {
+        this.gener = gener;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "autore='" + autore + '\'' +
-                ", genere='" + genere + '\'' +
+                "author='" + author + '\'' +
+                ", gener='" + gener + '\'' +
                 '}';
     }
 }

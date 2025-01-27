@@ -22,19 +22,19 @@ public class Prestito {
             joinColumns  =  @JoinColumn(name= "prestito_id"),
             inverseJoinColumns= @JoinColumn(name = "catalog_id")
     )
-    private List<Catalog> elementiPrestati = new ArrayList<>(); //relazione
+    private List<Catalog> elementsPrestati = new ArrayList<>(); //relazione
 
     @Column(nullable = false)
     private LocalDate dataľnizioPrestito;
-    private LocalDate datallestituzionePrevista;
-    private LocalDate datallestituzioneEffettiva;
+    private LocalDate dataRestituzionePrevista;
+    private LocalDate dataRestituzioneEffettiva;
 
-    public Prestito(User user, List<Catalog> elementiPrestati, LocalDate dataľnizioPrestito, LocalDate datallestituzionePrevista, LocalDate datallestituzioneEffettiva) {
+    public Prestito(User user, List<Catalog> elementsPrestati, LocalDate dataľnizioPrestito, LocalDate dataRestituzionePrevista, LocalDate dataRestituzioneEffettiva) {
         this.user = user;
-        this.elementiPrestati = elementiPrestati;
+        this.elementsPrestati = elementsPrestati;
         this.dataľnizioPrestito = dataľnizioPrestito.plusDays(30);
-        this.datallestituzionePrevista = datallestituzionePrevista;
-        this.datallestituzioneEffettiva = datallestituzioneEffettiva;
+        this.dataRestituzionePrevista = dataRestituzionePrevista;
+        this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
     }
     public Prestito(User userById, List<Catalog> prestitiUser4, LocalDate localDate){
 
@@ -57,11 +57,11 @@ public class Prestito {
     }
 
     public List<Catalog> getElementiPrestati() {
-        return elementiPrestati;
+        return elementsPrestati;
     }
 
-    public void setElementiPrestati(List<Catalog> elementiPrestati) {
-        this.elementiPrestati = elementiPrestati;
+    public void setElementiPrestati(List<Catalog> elementsPrestati) {
+        this.elementsPrestati = elementsPrestati;
     }
 
     public LocalDate getDataľnizioPrestito() {
@@ -73,19 +73,19 @@ public class Prestito {
     }
 
     public LocalDate getDatallestituzionePrevista() {
-        return datallestituzionePrevista;
+        return dataRestituzionePrevista;
     }
 
-    public void setDatallestituzionePrevista(LocalDate datallestituzionePrevista) {
-        this.datallestituzionePrevista = datallestituzionePrevista;
+    public void setDatallestituzionePrevista(LocalDate dataRestituzionePrevista) {
+        this.dataRestituzionePrevista = dataRestituzionePrevista;
     }
 
     public LocalDate getDatallestituzioneEffettiva() {
-        return datallestituzioneEffettiva;
+        return dataRestituzioneEffettiva;
     }
 
-    public void setDatallestituzioneEffettiva(LocalDate datallestituzioneEffettiva) {
-        this.datallestituzioneEffettiva = datallestituzioneEffettiva;
+    public void setDatallestituzioneEffettiva(LocalDate dataRestituzioneEffettiva) {
+        this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
     }
 
     @Override
@@ -93,10 +93,10 @@ public class Prestito {
         return "Prestito{" +
                 "id=" + id +
                 ", user=" + user +
-                ", elementiPrestati=" + elementiPrestati +
+                ", elementsPrestati=" + elementsPrestati +
                 ", dataľnizioPrestito=" + dataľnizioPrestito +
-                ", datallestituzionePrevista=" + datallestituzionePrevista +
-                ", datallestituzioneEffettiva=" + datallestituzioneEffettiva +
+                ", dataRestituzionePrevista=" + dataRestituzionePrevista +
+                ", dataRestituzioneEffettiva=" + dataRestituzioneEffettiva +
                 '}';
     }
 }

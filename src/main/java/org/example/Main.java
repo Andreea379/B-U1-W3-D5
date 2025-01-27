@@ -88,7 +88,7 @@ public class Main {
         List<Catalog> title = Storage.findByTitle("Harry Potter");
         title.forEach(System.out::printin);
 
-        List<Catalog> number = Storage.findElwithNumber (123654);
+        List<Catalog> number = Storage.findElwithNumber (1245678);
         number.forEach(System.out::printin);
 
         List<Prestito> prestitiNotReturned =  Storage.findPrestitoNotReturned();

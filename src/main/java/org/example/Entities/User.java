@@ -10,37 +10,36 @@ public class User {
     @GeneratedValue
     private long id;
     @Column(nullable = false)
-    private String nome;
+    private String name;
     @Column(nullable = false)
-    private String cognome;
-    private LocalDate dataDiNascita;
+    private String surname;
+    private LocalDate bithdayDate;
     @Column(nullable=  false, unique = true)
-    private long numeroDiTessera;
-    public Utente() {
-
+    private long number;
+    public user() {
     }
 
-    public User(String nome, String cognome, LocalDate dataDiNascita, long numeroDiTessera) {
-        this.nome = nome;
-        this.cognome = cognome;
-        this.dataDiNascita = dataDiNascita;
-        this.numeroDiTessera = numeroDiTessera;
+    public User(String name, String surname, LocalDate bithdayDate, long number) {
+        this.name = name;
+        this.surname = surname;
+        this.bithdayDate = bithdayDate;
+        this.number = number;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String nome) {
+        this.name = nome;
     }
 
     public String getCognome() {
-        return cognome;
+        return surname;
     }
 
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
+    public void setCognome(String surname) {
+        this.surname = surname;
     }
 
     public long getId() {
@@ -52,29 +51,29 @@ public class User {
     }
 
     public LocalDate getDataDiNascita() {
-        return dataDiNascita;
+        return bithdayDate;
     }
 
-    public void setDataDiNascita(LocalDate dataDiNascita) {
-        this.dataDiNascita = dataDiNascita;
+    public void setDataDiNascita(LocalDate bithdayDate) {
+        this.bithdayDate = bithdayDate;
     }
 
     public long getNumeroDiTessera() {
-        return numeroDiTessera;
+        return number;
     }
 
-    public void setNumeroDiTessera(long numeroDiTessera) {
-        this.numeroDiTessera = numeroDiTessera;
+    public void setNumeroDiTessera(long number) {
+        this.number = number;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", cognome='" + cognome + '\'' +
-                ", dataDiNascita=" + dataDiNascita +
-                ", numeroDiTessera=" + numeroDiTessera +
+                ", nome='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", bithdayDate=" + bithdayDate +
+                ", number=" + number +
                 '}';
     }
 }
